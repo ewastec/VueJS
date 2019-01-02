@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="fun">
+        <p v-on:mousemove="updateCoordinates">coordinates: {{ x }} and {{ y }} </p>
+    </div>
+
+    <div id="exercise">
+        <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+        <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
+        <!-- 2) Output your age, multiplied by 3 -->
+        <p>{{ newAge() }}</p>
+        <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+        <p>{{ random() }}</p>
+        <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+        <div>
+            <img style="width:100px;height:100px" v-bind:src="link">
+        </div>
+        <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+        <div>
+            <input type="text" v-model="name">
+        </div>
+    </div>
+
+    <hr>
+    <div id="app">
+        <button v-on:click="increase">Click me to increase</button>
+        <p>{{ number }} </p>
+        <br>
+        <input type="text" v-on:input="changeTitle">
+        <p>{{ title }}</p>
+        <p><span v-if="seen">Now you see me</span></p>
+        <span v-bind:title="messag">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+        </span>
+        <ol>
+            <li v-for="todo in todos">
+            {{ todo.text }}
+            </li>
+        </ol>
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+        <p>{{ info }}</p>
+        <input type="text" v-model="info">
+        <p><a v-bind:href="link">Google</a></p>
+        <br>
+        <p v-html="finishedLink"></p>
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
